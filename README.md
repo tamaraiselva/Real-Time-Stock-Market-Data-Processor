@@ -92,6 +92,12 @@ A real-time stock market dashboard with a C++ backend server and HTML/CSS/JavaSc
 - Technical indicators are calculated based on simulated price history
 - Not intended for actual trading decisions
 
+  ## outpur
+
+!output[F:\Stockstream\Screenshot 2025-08-03 212252.png]
+!output[F:\Stockstream\Screenshot 2025-08-03 212303.png]
+
 ## License
 
 This project is for educational purposes only. The simulated data should not be used for actual trading decisions.
+
