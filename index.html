@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Stock Market Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">📈 Real-Time Stock Market Dashboard</h1>
+                <div class="header-controls">
+                    <div class="status-indicator" id="status">
+                        <span class="status-dot"></span>
+                        <span>Live</span>
+                    </div>
+                    <div class="last-update">
+                        Last Updated: <span id="last-update-time">--:--:--</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="controls">
+            <div class="control-group">
+                <label class="switch">
+                    <input type="checkbox" id="auto-refresh" checked>
+                    <span class="slider"></span>
+                </label>
+                <span class="control-label">Auto Refresh</span>
+            </div>
+            
+            <div class="control-group">
+                <label for="refresh-interval">Interval:</label>
+                <select id="refresh-interval">
+                    <option value="5">5s</option>
+                    <option value="10" selected>10s</option>
+                    <option value="30">30s</option>
+                    <option value="60">1m</option>
+                </select>
+            </div>
+            
+            <button class="refresh-btn" id="manual-refresh">
+                <span class="refresh-icon">🔄</span>
+                Refresh Now
+            </button>
+        </nav>
+
+        <main class="main-content">
+            <section class="stocks-grid" id="stocks-grid">
+                <!-- Stock cards will be dynamically inserted here -->
+            </section>
+
+            <section class="market-summary">
+                <h2>Market Summary</h2>
+                <div class="summary-cards">
+                    <div class="summary-card">
+                        <h3>Market Status</h3>
+                        <div class="market-status" id="market-status">
+                            <span class="status-text">Market Open</span>
+                        </div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <h3>Active Stocks</h3>
+                        <div class="stat-value" id="active-stocks">6</div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <h3>Avg Volume</h3>
+                        <div class="stat-value" id="avg-volume">--</div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <h3>Top Performer</h3>
+                        <div class="stat-value" id="top-performer">--</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="performance-chart">
+                <h2>Performance Comparison</h2>
+                <div class="chart-container">
+                    <canvas id="performance-chart" width="800" height="400"></canvas>
+                </div>
+            </section>
+
+            <section class="detailed-table">
+                <h2>Detailed Stock Information</h2>
+                <div class="table-container">
+                    <table id="stocks-table">
+                        <thead>
+                            <tr>
+                                <th>Symbol</th>
+                                <th>Price</th>
+                                <th>Change</th>
+                                <th>Change %</th>
+                                <th>Volume</th>
+                                <th>High</th>
+                                <th>Low</th>
+                                <th>SMA 20</th>
+                                <th>RSI</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stocks-table-body">
+                            <!-- Table rows will be dynamically inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>💡 Real-time stock data powered by C++ backend engine</p>
+                <p>⚠️ This is for educational purposes only. Not financial advice.</p>
+                <div class="tech-stack">
+                    <span class="tech-badge">C++</span>
+                    <span class="tech-badge">HTML5</span>
+                    <span class="tech-badge">CSS3</span>
+                    <span class="tech-badge">JavaScript</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner"></div>
+        <p>Loading stock data...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
