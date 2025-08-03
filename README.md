@@ -94,9 +94,9 @@ A real-time stock market dashboard with a C++ backend server and HTML/CSS/JavaSc
 
   ## output
   
-![image](Screenshot 2025-08-03 212252.png)
+![image](./Screenshot 2025-08-03 212252.png)
 
-![image](Screenshot 2025-08-03 212303.png)
+![image](./Screenshot 2025-08-03 212303.png)
 
 ## License
 
